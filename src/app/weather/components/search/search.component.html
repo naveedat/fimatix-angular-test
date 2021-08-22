@@ -1,0 +1,10 @@
+<form class="form-inline mb-5" [formGroup]="weatherForm" (ngSubmit)="search()" data-cy="form">
+  <div class="form-group col-8 pl-0">
+    <input class="form-control mt-3 col" type="text" placeholder="City" formControlName="city" data-cy="city" required>
+  </div>
+  <button class="btn-search btn btn-primary mt-3 col-4" type="submit" data-cy="submit">Search</button>
+
+  <div *ngIf="weatherForm.controls.city.touched && weatherForm.controls.city.errors?.required" data-cy="error">
+    Please enter a city
+  </div>
+</form>
